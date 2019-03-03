@@ -4,7 +4,6 @@ date = "2018-12-10"
 tags = ["tutorial"]
 categories = ["Hugo"]
 description = "A brief summary for the post 1. And this is slightly longer than the others. And this one also has three sentences. Nevermind, this one actually has four sentences."
-images = ["images/projects/cargill_500.jpg"]
 +++
 
 The `hugo new theme` command will scaffold the beginnings of a new theme for you to get you on your way.

@@ -1,8 +1,8 @@
-name = "Sanstha"
+name = "mero"
 license = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
 description = "Theme for personal blogs"
-homepage = "http://example.org/"
+homepage = "https://github.com/darshanbaral/mero"
 tags = ["Personal", "Blog", "Dark"]
 features = ["Responsive"]
 min_version = "0.41"

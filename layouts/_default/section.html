@@ -10,7 +10,7 @@
         </a>
       </h2>
       <div class="border rounded p-2">
-        {{ range where $taxonomy.Pages.ByDate "Section" $sectionName }}
+        {{ range where $taxonomy.Pages.ByDate "Type" $sectionName }}
         <h4 class="ml-2">
           <a href="{{ .Permalink }}">
             {{ .Title }}

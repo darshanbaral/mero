@@ -22,7 +22,7 @@
           ><a href="./posts"><i>See All</i></a></small
         >
       </h4>
-      {{ range where .Pages "Section" "posts" | first 4}}
+      {{ range where .Pages "Type" "posts" | first 4}}
       <a class="list-entry-link text-uppercase" href="{{ .Permalink }}">
         {{ .Title }}
       </a>

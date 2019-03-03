@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "My Blog"
-theme = "sanstha"
+theme = "mero"
 
 [params]
   author = "Firstname Lastname"

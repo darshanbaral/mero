@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Sanstha"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "Theme for personal blogs"
+homepage = "http://example.org/"
+tags = ["Personal", "Blog", "Dark"]
+features = ["Responsive"]
+min_version = "0.41"
+
+[author]
+  name = "Darshan Baral"
+  homepage = "https://www.darshanbaral.com/"

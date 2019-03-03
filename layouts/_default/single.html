@@ -1,0 +1,28 @@
+{{ define "main" }}
+<main>
+  <h1>
+    <u>{{ .Title }}</u>
+  </h1>
+  <ul class="list-inline">
+    <li class="list-inline-item">
+      {{ .Date.Format "2006-Jan-02" }} |
+      <a href="/tags/">
+        <i class="fas fa-tags"></i>
+      </a>
+    </li>
+    {{  range.Params.tags }}
+    <li class="list-inline-item">
+      <a href="/tags/{{ . }}/">
+        {{ . }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  <div>
+    <article id="content">
+      {{ .Content }}
+    </article>
+  </div>
+</main>
+{{ partial "footer.html" . }}
+{{ end }}

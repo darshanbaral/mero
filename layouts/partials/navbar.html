@@ -1,0 +1,7 @@
+<div class="btn-group mt-2 mb-4">
+  {{ range.Site.Menus.main }}
+  <a href="{{ .URL }}" class="border-warning bg-dark btn"
+    ><span>{{ .Name }}</span>
+  </a>
+  {{ end }}
+</div>

@@ -1,0 +1,48 @@
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <title>{{ .Site.Title }}</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="{{ .Site.Params.description }}" />
+    <meta name="author" content="{{ .Site.Params.author }}" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Overlock"
+      rel="stylesheet"
+    />
+
+    <script>
+      setColors = function() {
+        let images = document.querySelectorAll("img");
+        images.forEach(elem => elem.classList.add("img-fluid", "rounded"));
+
+        let imagecaption = document.querySelectorAll("figcaption");
+        imagecaption.forEach(elem => elem.classList.add("initialism"));
+      };
+      window.onload = setColors;
+    </script>
+
+    <style>
+      a {
+        color: #ffc107 !important;
+      }
+      code {
+        color: #17a2b8 !important;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      * {
+        font-family: "Overlock", cursive;
+      }
+    </style>
+  </head>
+</html>

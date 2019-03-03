@@ -1,0 +1,19 @@
+{{ define "main" }}
+<main>
+  <h1 id="title">{{ .Title }}</h1>
+  <div class="d-flex flex-row flex-wrap mb-3">
+    {{ $data := .Data }}
+    {{ range $key, $value := .Data.Terms }}
+    <div class="p-1 border rounded m-1">
+      <h3 class="m-0">
+        <a href="/{{ $data.Plural }}/{{ $key | urlize }}">
+          {{ $key }}
+        </a>
+      </h3>
+      <p class="ml-2">{{ len $value }} posts.</p>
+    </div>
+    {{ end }}
+  </div>
+</main>
+{{ partial "footer.html" . }}
+{{ end }}

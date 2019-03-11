@@ -1,6 +1,6 @@
 name = "mero"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/darshanbaral/mero/blob/master/LICENSE"
 description = "Theme for personal blogs"
 homepage = "https://github.com/darshanbaral/mero"
 tags = ["Personal", "Blog", "Dark"]

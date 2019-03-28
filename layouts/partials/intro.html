@@ -1,6 +1,6 @@
 <div class="row row-eq-height">
   <div class="col-md-4 mt-2">
-    <img class="w-100 rounded" src={{ "./images/main.jpeg" | absURL }}>
+    <img class="w-100 rounded" src={{ .Site.Params.mainImage | absURL }}>
     <div class="mt-1 text-center">
       {{ range.Site.Params.social.list }}
       <span class="ml-1 mr-1" style="font-size: 2em;">

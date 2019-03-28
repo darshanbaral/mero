@@ -7,6 +7,9 @@ theme = "mero"
   author = "Firstname Lastname"
   description = "My awesome blog"
 
+  # replace with your favorite local image like img/blogMain.jpg
+  mainImage = "https://github.com/darshanbaral/mero/blob/master/static/images/main.jpeg"
+
 [menu]
   [[menu.main]]
     identifier = "home"

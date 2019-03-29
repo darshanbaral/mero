@@ -1,0 +1,5 @@
+ul[class="footer-menu"] { text-align: center; }
+li[class="footer-menu"] { display: inline-block; }
+li[class="footer-menu"]::before { content: " | "; }
+li[class="footer-menu"]:first-child::before { content: ""; }
+li[class="footer-menu"]:not:first-child { content: " | "; }

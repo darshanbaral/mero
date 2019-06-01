@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   {{ partial "head.html" . }}
-
-  <body class="container bg-dark text-white">
+  <body class="bg-dark text-white m-auto" style="width:95%; max-width: 1024px;">
     <div class="wrapper">
       {{ partial "navbar.html" . }}
-      {{ block "main" . }}
-      {{ end }}
+      <main>
+        {{ block "main" . }}
+        {{ end }}
+      </main>
     </div>
     {{ partial "footer.html" . }}
   </body>

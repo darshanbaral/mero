@@ -1,0 +1,7 @@
+{{ if lt .ReadingTime 1 }}
+< 1 min
+{{ else if eq .ReadingTime 1 }}
+1 min
+{{ else }}
+{{ .ReadingTime }} mins
+{{ end }}

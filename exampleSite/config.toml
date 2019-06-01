@@ -2,39 +2,13 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My Blog"
 theme = "mero"
+disableKinds = ["taxonomyTerm"]
 
 [params]
+  dateFormat = "2006-01-02" 
   author = "Firstname Lastname"
   description = "My awesome blog"
-
-[menu]
-  [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    title = "home"
-    url = "/"
-    weight = 100
-
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    title = "posts"
-    url = "/posts/"
-    weight = 200
-
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    title = "categories"
-    url = "/categories/"
-    weight = 300    
-
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    title = "tags"
-    url = "/tags/"
-    weight = 400 
+  mainImage = "images/main.jpeg"
 
 [params.introduction]
    text = "**This website** is my blog. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

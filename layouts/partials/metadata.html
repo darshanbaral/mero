@@ -1,0 +1,37 @@
+<div class="m-2 metadata overflow-hidden" style="max-height: 0px;">
+  {{ if ne $.Kind "section" }}
+  <div class="metadata-value mb-1 taxa taxa-container-div list-sections">
+    <div>
+      Reading Time: {{ partial "readingtime" . }}      
+    </div>
+    <div>
+      Section:
+      <a
+        class="pl-1 pr-1 rounded border border-secondary"
+        href="{{ .Section | relURL }}"
+        title="Section"
+      >
+        {{- (.Site.GetPage .Section).Title -}}
+      </a>
+    </div>
+  </div>
+  {{ end }}
+
+  {{ $params := .Params }}
+  {{ range $name, $value := .Site.Taxonomies }}
+  {{ if index $params $name }}
+  <div class="metadata-value mb-1 taxa taxa-container-div list-{{- $name -}}">
+    {{ $name | humanize }}:
+    {{ range index $params $name }}
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="{{ $name | relURL }}/{{ . | urlize }}"
+      title="{{ $name }}"
+    >    
+      {{- . -}}
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+</div>

@@ -1,5 +1,16 @@
 {{ define "main" }}
-<main>
-    {{ partial "intro.html" . }}
-</main>
+<div class="d-flex flex-row flex-wrap justify-content-around">
+  <div class="mt-4 home-flex-item" style="width: calc(35% - 20px); min-width: 250px;">
+    {{ partial "image-social" . }}
+  </div>
+
+  <div class="home-flex-item mt-4" style="width: calc(65% - 20px);">
+    <div class="position-relative border rounded p-2" style="margin-bottom: 40px;">
+      {{ partial "about" . }}
+    </div>
+    <div class="home-flex-item position-relative p-2 border rounded text-center">
+      {{ partial "recentarticles" . }}
+    </div>
+  </div>
+</div>
 {{ end }}

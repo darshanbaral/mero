@@ -1,0 +1,18 @@
+<h4
+  class="pl-2 pr-2 bg-dark rounded border"
+  style="position: absolute; top: -0.7em; left: 0.5em;"
+>
+  <b>Recent</b>
+</h4>
+
+<div class="pt-2">
+  {{ range first 4 (where .Site.Pages "Kind" "page").ByDate.Reverse }}
+  <a class="ml-1 list-entry-link text-uppercase" href="{{ .Permalink }}">
+    {{ .Title }}
+  </a>
+  <p class="ml-2 mb-1">{{ .Description }}</p>
+  {{ end }}
+  <p class="text-right m-0">
+    <a href="{{ `/archive/` | relURL }}">See All</a>
+  </p>
+</div>

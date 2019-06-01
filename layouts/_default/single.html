@@ -1,28 +1,44 @@
 {{ define "main" }}
-<main>
-  <h1>
-    <u>{{ .Title }}</u>
-  </h1>
-  <ul class="list-inline">
-    <li class="list-inline-item">
-      {{ .Date.Format "2006-Jan-02" }}
-    </li>
-    <a href="/tags/">
-      <i class="fas fa-tags"></i>
-    </a>
-    {{ range.Params.tags }}
-    <li class="list-inline-item">
-      <a href="/tags/{{ . }}/">
-        {{ . }}
-      </a>
-    </li>
-    {{ end }}
-  </ul>
-
-  <div>
-    <article id="content">
-      {{ .Content }}
-    </article>
+<article class="border rounded p-3 position-relative" style="margin-top: 2.5em;">
+  <div class="header">
+    <h1 style="font-size: 2.5em;">
+      {{ .Title }}
+    </h1>
+    <div
+    class="mb-1 mr-3 pl-1 pr-1 rounded bg-dark"
+    style="position: absolute; top: -19px; font-size: 0.9em;"
+  >
+    <time>        
+        {{- .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) -}}        
+    </time>    
+    <span
+      class="more"
+      style="font-size: 1.5em;"
+      title="Show Metadata"
+      onclick="showMetadata(this)"
+    >
+      &#43;
+    </span>
   </div>
-</main>
+  {{- partial "metadata" . -}}
+  </div>
+  <div class="article pb-3 pt-3 border-bottom border-top">
+    {{ if .Params.mainImage }}
+    <figure>
+      <a href="{{ .Params.mainImage | relURL }}">
+        <img
+          src="{{ .Params.mainImageThumbnail | relURL }}"
+          alt="{{ .Params.mainImageCaption | markdownify }}"
+        />
+      </a>
+      <figcaption>
+        {{ .Params.mainImageCaption | markdownify }}
+      </figcaption>
+    </figure>
+    {{ end }}
+    {{ .Content }}
+  </div>
+  {{ partial "prevNext" . }}
+</article>
+{{ partial "metadataJS" . }}
 {{ end }}

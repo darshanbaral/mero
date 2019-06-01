@@ -4,55 +4,24 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta name="description" content="{{ .Site.Params.description }}" />
   <meta name="author" content="{{ .Site.Params.author }}" />
+  {{- $hugoGenerator := index (findRE `content=\"(.+)\"` hugo.Generator) 0 }}
+  <meta name="generator" content="mero theme by Darshan in {{ replaceRE `content=|\"` `` $hugoGenerator }}" />
 
   <link
     rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
   />
   <link
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
   />
   <link
-    href="https://fonts.googleapis.com/css?family=Overlock"
+    href="https://fonts.googleapis.com/css?family=Overlock|Roboto+Mono&display=swap"
     rel="stylesheet"
   />
+  <link rel="stylesheet" href="{{ `css/mero.css` | relURL }}" />
 
-  <script>
-    setColors = function() {
-      let images = document.querySelectorAll("img");
-      images.forEach(elem => elem.classList.add("img-fluid", "rounded"));
-
-      let imagecaption = document.querySelectorAll("figcaption");
-      imagecaption.forEach(elem => elem.classList.add("initialism"));
-    };
-    window.onload = setColors;
-  </script>
-
-  <style>
-    html,
-    body {
-      height: 100%;
-    }
-    .wrapper {
-      min-height: 100%;
-      margin-bottom: -100px;
-      padding-bottom: 100px;
-    }
-    footer {
-      height: 100px;
-    }
-    a {
-      color: #ffc107 !important;
-    }
-    code {
-      color: #17a2b8 !important;
-    }
-    a:hover {
-      text-decoration: none;
-    }
-    * {
-      font-family: "Overlock", cursive;
-    }
-  </style>
+  <script src="{{ `js/mero.js` | relURL }}"></script>
 </head>

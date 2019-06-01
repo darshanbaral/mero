@@ -1,0 +1,23 @@
+{{ $scratch := newScratch }}
+{{ $scratch.Delete "custom" }}
+{{ $flag := .showAll }}
+
+{{ range $name, $value := .this }}
+{{ $scratch.Add "custom" (slice (dict "Name" $name "Value" $value "Num" (len $value))) }}
+{{ end }}
+
+{{ range sort ($scratch.Get "custom") ".Num" "desc" }}
+<h4>
+  {{ .Name | humanize }}{{if $flag }}<small class="badge">({{ .Num }})</small
+  >{{ end }}
+</h4>
+{{ $nn := cond $flag .Num 15 }}
+{{ $ap := index $.this .Name }}
+<div class="d-flex flex-row flex-wrap ml-2">
+  {{ range first $nn $ap.ByCount }}
+ <div class="m-2 p-2 btn btn-dark shadow border border-light">
+    <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a><small class="badge">{{ .Count }}</small>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

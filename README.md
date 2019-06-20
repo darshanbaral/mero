@@ -2,7 +2,10 @@
 
 The mero Theme is for personal blogs.
 
-## Installation
+## Demo
+[Click here](https://merodemo.netlify.com/) for live demo.
+
+# Installation
 
 Inside the folder of your Hugo site run:
 

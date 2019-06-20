@@ -15,7 +15,7 @@
       <div class="dropdown-content p-2 bg-dark2 mt-2 rounded w-auto mt-1" style="min-width: 200px;">
         <ul class="list-unstyled">
           {{ range .Site.Sections.ByWeight }}
-          {{ $thisSection := replace .File.Dir "\\" "" }}
+          {{ $thisSection := replace (replace .File.Dir "\\" "") "/" "" }}
           {{ if not (in (slice "alltaxa" "archive") $thisSection) }}
           <li class="pt-2">
             <a href="{{ .Permalink }}">{{ .Title }}</a>

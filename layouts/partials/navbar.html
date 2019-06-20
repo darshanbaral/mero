@@ -1,18 +1,19 @@
 <nav class="mb-3 mt-3 ml-1">
   <div class="d-flex flex-row">
-    <div class="menu-item">
-      <a
-        href="{{ `/` | relURL }}"
-        class="border border-warning bg-dark p-2"
-        style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;"
-        ><span>Home</span>
-      </a>
+    <div
+      class="menu-item border border-warning bg-dark p-2"
+      style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;"
+    >
+      <a href="{{ `/` | relURL }}"><span>Home</span> </a>
     </div>
-    <div class="menu-item dropdown">
-      <span class="dropbtn border border-warning bg-dark p-2 text-warning"
+    <div class="menu-item dropdown border border-warning bg-dark p-2">
+      <span class="dropbtn text-warning"
         >Sections <i class="fas fa-angle-down"></i
       ></span>
-      <div class="dropdown-content p-2 bg-dark2 mt-2 rounded w-auto mt-1" style="min-width: 200px;">
+      <div
+        class="dropdown-content p-2 bg-dark2 mt-2 rounded w-auto mt-1"
+        style="min-width: 200px;"
+      >
         <ul class="list-unstyled">
           {{ range .Site.Sections.ByWeight }}
           {{ $thisSection := replace (replace .File.Dir "\\" "") "/" "" }}
@@ -25,18 +26,16 @@
         </ul>
       </div>
     </div>
-    <div class="menu-item">
+    <div class="menu-item border border-warning bg-dark p-2">
       <a
         href="{{ `/alltaxa/` | relURL }}"
-        class="border border-warning bg-dark p-2"
         ><span>Taxa</span>
       </a>
     </div>
-    <div class="menu-item">
+    <div class="menu-item border border-warning bg-dark p-2"
+    style="border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
       <a
         href="{{ `/archive/` | relURL }}"
-        class="border border-warning bg-dark p-2"
-        style="border-top-right-radius: 10px; border-bottom-right-radius: 10px;"
         ><span>Archive</span>
       </a>
     </div>

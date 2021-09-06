@@ -3,9 +3,10 @@
 The mero Theme is for personal blogs.
 
 ## Demo
-[Click here](https://merodemo.netlify.com/) for live demo.
 
-# Installation
+[Click here](https://merodemo.netlify.app/) for live demo.
+
+## Installation
 
 Inside the folder of your Hugo site run:
 

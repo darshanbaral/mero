@@ -4,6 +4,11 @@ title = "My Blog"
 theme = "mero"
 disableKinds = ["taxonomyTerm"]
 
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.80.0'
+
 [params]
   dateFormat = "2006-01-02" 
   author = "Firstname Lastname"

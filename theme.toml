@@ -6,7 +6,7 @@ homepage = "https://github.com/darshanbaral/mero"
 demosite = "https://merodemo.netlify.app/"
 tags = ["Personal", "Blog", "Dark"]
 features = ["Responsive"]
-min_version = "0.80.o"
+min_version = "0.80.0"
 
 [author]
   name = "Darshan Baral"

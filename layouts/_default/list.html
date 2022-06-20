@@ -1,8 +1,12 @@
 {{ define "main" }}
 <main>
   <h1 class="mt-4">{{ .Title }}</h1>
+
+  <!-- Content-wrapper -->
   <div class="d-flex flex-column">
     {{ range (.Paginator 10).Pages }}
+    
+    <!-- List-element -->
     <div
       class="border mt-3 mb-3 p-3 rounded position-relative"
     >
@@ -12,23 +16,32 @@
         </a>
       </h3>
       <div
-      class="bg-dark pl-1 pr-1"
-      style="position: absolute; top: -1rem; left: 5px;"
-    >
-      <small>
-        <time>
-          {{- .Date.Format (default "2006-12-13" $.Site.Params.dateFormat) -}}
-        </time>
-      </small>
-      <span
-        class="more"
-        style="font-size: 1.2em;"
-        title="Show Metadata"
-        onclick="showMetadata(this)"
+        class="bg-dark pl-1 pr-1"
+        style="position: absolute; top: -1rem; left: 5px;"
       >
-        &#43;
-      </span>
+
+        <!-- Date -->
+        <small>
+          <time>
+            {{- .Date.Format (default "2006-12-13" $.Site.Params.dateFormat) -}}
+          </time>
+        </small>
+
+        <!-- Metadata-button -->
+        <span
+          class="more"
+          style="font-size: 1.2em;"
+          title="Show Metadata"
+          onclick="showMetadata(this)"
+          onkeypress="keyPress(this, event)"
+          tabindex="0"
+        >
+          &#43;
+        </span>
+
     </div>
+
+    <!-- Metadata-section-->
     {{ partial "metadata" . }}
 
       {{ if .Params.Description }}
@@ -36,7 +49,10 @@
       {{ end }}
     </div>
     {{ end }}
+
   </div>
+
+
   <div class="d-flex justify-content-center">
     {{ template "_internal/pagination.html" . }}
   </div>

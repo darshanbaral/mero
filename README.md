@@ -1,24 +1,17 @@
-# mero Theme
+# Mero theme
 
-The mero Theme is for personal blogs.
+## What is this?
 
-## Demo
+This my continuation of a custom theme for [Hugo](https://gohugo.io/). The theme is originally made by [Darshan](https://www.darshanbaral.com/).
 
-[Click here](https://merodemo.netlify.app/) for live demo.
+## Can I see a demo?
 
-## Installation
+[Click here](https://cengelsen.no) for live implementation of the theme.
 
-Inside the folder of your Hugo site run:
+## How do I run locally?
 
-    $ cd themes
-    $ git clone https://github.com/darshanbaral/mero.git
-
-For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
-
-## Getting started
-
-After installing the mero Theme successfully, modify the `config.toml`.
-
-### The config file
-
-You'll find a file called [`config.toml`](https://github.com/darshanbaral/mero/blob/master/exampleSite/config.toml). Copy the `config.toml`to the root folder of your Hugo site and customize it per your need.
+1. Download and install Hugo
+2. ```Hugo new site <website-name>```
+3. Open ```theme```-directory
+4. ```git clone git clone https://github.com/Cengelsen/mero.git```
+5. Copy ```<website-name>/themes/mero/examplesite/config.toml``` to ```<website-name>```, meaning the root folder of the Hugo-project.

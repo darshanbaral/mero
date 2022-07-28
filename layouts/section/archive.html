@@ -43,9 +43,9 @@
         <!-- Metadata-section -->
         {{- partial "metadata" . -}}
       </td>
+      
+      <!-- Date -->
       <td>
-
-        <!-- Date -->
         <time>
           {{- .Date.Format (default "January 2, 2006" "Jan 2, 2006") -}}
         </time>

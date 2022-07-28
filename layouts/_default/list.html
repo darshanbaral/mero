@@ -1,25 +1,19 @@
 {{ define "main" }}
 <main>
-  <h1 class="mt-4">{{ .Title }}</h1>
+  <!-- Page title -->
+  <h1 class="page-title">{{ .Title }}</h1>
 
-  <!-- Content-wrapper -->
-  <div class="d-flex flex-column">
+  <!-- List wrapper -->
+  <div class="list-wrapper">
     {{ range (.Paginator 10).Pages }}
     
-    <!-- List-element -->
+    <!-- List element -->
     <div
-      class="border mt-3 mb-3 p-3 rounded position-relative"
+      class="list-item"
     >
-      <h3 class="mb-0">
-        <a href="{{ .Permalink | relURL }}" class="article-titles">
-          {{- .Title -}}
-        </a>
-      </h3>
-      <div
-        class="bg-dark pl-1 pr-1"
-        style="position: absolute; top: -1rem; left: 5px;"
-      >
-
+    <!-- Wrapper for date & metadata-button -->
+      <div class="date-wrapper">
+        
         <!-- Date -->
         <small>
           <time>
@@ -29,8 +23,7 @@
 
         <!-- Metadata-button -->
         <span
-          class="more"
-          style="font-size: 1.2em;"
+          class="metadata-btn"
           title="Show Metadata"
           onclick="showMetadata(this)"
           onkeypress="keyPress(this, event)"
@@ -38,22 +31,30 @@
         >
           &#43;
         </span>
+      </div>
 
-    </div>
+      <!-- Metadata-section-->
+      {{ partial "metadata" . }}
 
-    <!-- Metadata-section-->
-    {{ partial "metadata" . }}
-
+      <!-- Blog article title -->
+      <h3 class="item-title">
+        <a href="{{ .Permalink | relURL }}" class="item-title-link">
+          {{- .Title -}}
+        </a>
+      </h3>
+      
+      <!-- Blog article description -->
       {{ if .Params.Description }}
-      <p class="mt-2 mb-0 ml-2">{{ .Params.Description }}</p>
+      <p class="item-desc">{{ .Params.Description }}</p>
       {{ end }}
     </div>
     {{ end }}
 
+
   </div>
 
-
-  <div class="d-flex justify-content-center">
+  <!-- Pagination -->
+  <div class="pagination">
     {{ template "_internal/pagination.html" . }}
   </div>
 </main>

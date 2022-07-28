@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   {{ partial "head.html" . }}
-  <body class="bg-dark text-white m-auto" style="width:95%; max-width: 1024px;">
-    <div class="wrapper">
+  
+  <body>
+    <div class="page-wrapper">
       {{ partial "navbar.html" . }}
       <main>
         {{ block "main" . }}

@@ -1,23 +1,38 @@
+<!-- creates a temporary scratchpad to store variables -->
 {{ $scratch := newScratch }}
 {{ $scratch.Delete "custom" }}
 {{ $flag := .showAll }}
 
 {{ range $name, $value := .this }}
-{{ $scratch.Add "custom" (slice (dict "Name" $name "Value" $value "Num" (len $value))) }}
+  <!-- fôrer scratchpadden en dictionary med name value og num -->  
+  {{ $scratch.Add "custom" (slice (dict "Name" $name "Value" $value "Num" (len $value))) }}
 {{ end }}
 
+<!-- creates a sorted range with the values of .Num in the scratchpad -->
 {{ range sort ($scratch.Get "custom") ".Num" "desc" }}
-<h4>
-  {{ .Name | humanize }}{{if $flag }}<small class="badge">({{ .Num }})</small
-  >{{ end }}
-</h4>
-{{ $nn := cond $flag .Num 15 }}
-{{ $ap := index $.this .Name }}
-<div class="d-flex flex-row flex-wrap ml-2">
-  {{ range first $nn $ap.ByCount }}
- <div class="m-2 p-2 btn btn-dark shadow border border-light">
-    <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a><small class="badge">{{ .Count }}</small>
-  </div>
-  {{ end }}
-</div>
+
+  <!-- generates subtitle for tags and categories -->
+  <h4>
+    {{ .Name | humanize }}
+      {{if $flag }}
+        <small class="taxa-cntr">({{ .Num }})</small>
+      {{ end }}
+  </h4>
+
+  <!-- declares $nn to be either .Num or 15, depending on the truth-value of $flag-->
+  {{ $nn := cond $flag .Num 15 }}
+
+  <!-- declares $ap to be the indexed value of .Name from $.this, which is the scratchpad -->
+  {{ $ap := index $.this .Name }}
+
+    <div class="taxa-box-wrapper">
+
+      <!-- creates a range of the first $nn values of $ap.ByCount -->
+      {{ range first $nn $ap.ByCount }}
+        <div class="taxa-box-content">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a><small class="taxa-cntr">{{ .Count }}</small>
+        </div>
+      {{ end }}
+
+    </div>
 {{ end }}

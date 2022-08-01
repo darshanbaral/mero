@@ -1,61 +1,61 @@
 {{ define "main" }}
-{{- $paginator := .Paginate (where .Site.Pages "Kind" "page").ByDate.Reverse 20 }}
-<h1 class="h1 mt-4">{{ .Title }}</h1>
+  {{- $paginator := .Paginate (where .Site.Pages "Kind" "page").ByDate.Reverse 20 }}
+  <h1 class="archive-title">{{ .Title }}</h1>
 
-<!-- Archive list-->
-<table class="shadow table table-dark table-striped table-sm">
-  
-  <!-- Header of list-->
-  <thead class="thead-dark">
-    <tr>
-      <th class="pt-2 pb-2" scope="col">Title</th>
-      <th class="pt-2 pb-2" scope="col" style="width: 100px;">Date</th>
-    </tr>
-  </thead>
+  <!-- Archive list-->
+  <table class="table-wrapper">
+    
+    <!-- Header of list-->
+    <thead class="thead-wrapper">
+      <tr>
+        <th class="thead-item" scope="col">Title</th>
+        <th class="thead-item" scope="col" style="width: 100px;">Date</th>
+      </tr>
+    </thead>
 
-  <!-- Content list -->
-  <tbody class="archive-list">
-    {{ range $paginator.Pages }}
+    <!-- Content list -->
+    <tbody class="archive-list">
+      {{ range $paginator.Pages }}
 
-    <!-- List item -->
-    <tr class="archive-entries">
-      <td>
+      <!-- List item -->
+      <tr class="archive-item">
+        <td>
 
-        <!-- Title -->
-        <p class="m-0">
-          <a href="{{ .Permalink | relURL }}" title="{{ .Params.description }}">
-            {{- .Title -}}
-          </a>
+          <!-- Title -->
+          <p class="item-content-wrapper">
+            <a href="{{ .Permalink | relURL }}" title="{{ .Params.description }}">
+              {{- .Title -}}
+            </a>
 
-          <!-- Metadata-button -->
-          <span
-            class="more"
-            style="font-size: 1.2em;"
-            title="Show Metadata"
-            onclick="showMetadata(this)"
-            onkeypress="keyPress(this, event)"
-            tabindex="0"
-          >
-            &#43;
-          </span>
-        </p>
+            <!-- Metadata-button -->
+            <span
+              class="metadata-btn"
+              style="font-size: 1.2em;"
+              title="Show Metadata"
+              onclick="showMetadata(this)"
+              onkeypress="keyPress(this, event)"
+              tabindex="0"
+            >
+              &#43;
+            </span>
+          </p>
 
-        <!-- Metadata-section -->
-        {{- partial "metadata" . -}}
-      </td>
-      
-      <!-- Date -->
-      <td>
-        <time>
-          {{- .Date.Format (default "January 2, 2006" "Jan 2, 2006") -}}
-        </time>
-      </td>
-    </tr>
-    {{ end }}
-  </tbody>
-</table>
+          <!-- Metadata-section -->
+          {{- partial "metadata" . -}}
+        </td>
+        
+        <!-- Date -->
+        <td>
+          <time>
+            {{- .Date.Format (default "January 2, 2006" "Jan 2, 2006") -}}
+          </time>
+        </td>
+      </tr>
+      {{ end }} 
+    </tbody>
+  </table>
 
-<!-- Imports -->
-{{ partial "metadataJS" . }}
-{{ template "_internal/pagination.html" . }}
+  <!-- Imports -->
+  {{ partial "metadataJS" . }}
+  {{ template "_internal/pagination.html" . }}
 {{ end }}

@@ -1,23 +1,23 @@
 {{ define "main" }}
-<div class="content-wrapper">
-  
-  <!-- Picture and social section -->
-  <div class="picture-section">
-    {{ partial "image-social" . }}
-  </div>
-
-  <!-- Main section -->
-  <div class="content-section">
-
-    <!-- About section -->
-    <div class="about-section">
-      {{ partial "about" . }}
-    </div> 
+  <div class="content-wrapper">
     
-    <!-- Recent articles section -->
-    <div class="recent-section">
-      {{ partial "recentarticles" . }}
-    </div> 
+    <!-- Picture and social section -->
+    <div class="picture-section">
+      {{ partial "image-social" . }}
+    </div>
+
+    <!-- Main section -->
+    <div class="content-section">
+
+      <!-- About section -->
+      <div class="about-section">
+        {{ partial "about" . }}
+      </div> 
+      
+      <!-- Recent articles section -->
+      <div class="recent-section">
+        {{ partial "recentarticles" . }}
+      </div> 
+    </div>
   </div>
-</div>
 {{ end }}

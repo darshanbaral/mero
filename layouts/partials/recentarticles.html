@@ -3,12 +3,16 @@
 </h4>
 
 <div class="recent-list">
+
+  <!-- creates a list of the first 4 articles -->
   {{ range first 4 (where .Site.Pages "Kind" "page").ByDate.Reverse }}
-  <a class="article-title" href="{{ .Permalink }}">
-    {{ .Title }}
-  </a>
-  <p class="article-desc">{{ .Description }}</p>
+    <a class="article-title" href="{{ .Permalink }}">
+      {{ .Title }}
+    </a>
+    <p class="article-desc">{{ .Description }}</p>
   {{ end }}
+
+  <!-- All articles button -->
   <p class="all-articles">
     <a href="{{ `/archive/` | relURL }}">See All</a>
   </p>

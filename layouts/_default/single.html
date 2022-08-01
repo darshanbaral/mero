@@ -1,43 +1,76 @@
 {{ define "main" }}
-<article class="border rounded p-3 position-relative" style="margin-top: 2.5em;">
-  <div class="header">
-    <h1 style="font-size: 2.5em;">
-      {{ .Title }}
-    </h1>
-    <div
-    class="mb-1 mr-3 pl-1 pr-1 rounded bg-dark"
-    style="position: absolute; top: -19px; font-size: 0.9em;"
-  >
-    <time>        
-        {{- .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) -}}        
-    </time>    
-    <span
-      class="metadata-btn"
-      title="Show Metadata"
-      onclick="showMetadata(this)"
-    >
-      &#43;
-    </span>
-  </div>
-  {{- partial "metadata" . -}}
-  </div>
-  <div class="article pb-3 pt-3 border-bottom border-top">
-    {{ if .Params.mainImage }}
-    <figure>
-      <a href="{{ .Params.mainImage | relURL }}">
-        <img
-          src="{{ .Params.mainImageThumbnail | relURL }}"
-          alt="{{ .Params.mainImageCaption | markdownify }}"
-        />
-      </a>
-      <figcaption>
-        {{ .Params.mainImageCaption | markdownify }}
-      </figcaption>
-    </figure>
-    {{ end }}
-    {{ .Content }}
-  </div>
-  {{ partial "prevNext" . }}
-</article>
-{{ partial "metadataJS" . }}
+
+  <!-- Article page wrapper -->
+  <article class="article-wrapper">
+
+    <!-- Wrapper for page title, date-stamp & metadata -->
+    <div class="header">
+
+      <!-- Article title -->
+      <h1 style="font-size: 2.5em;">
+        {{ .Title }}
+      </h1>
+      
+      <!-- Wrapper for metadata-button & date-stamp -->
+      <div class="date-btn-wrapper">
+
+        <!-- Date-stamp -->
+        <small>
+          <time class="date-stamp">
+              {{- .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) -}}        
+          </time>
+        </small>
+
+        <!-- Metadata-button -->
+        <span
+          class="metadata-btn"
+          title="Show Metadata"
+          onclick="showMetadata(this)"
+          onkeypress="keyPress(this, event)"
+          tabindex="0"
+        >
+          &#43;
+        </span>
+      </div>
+
+      <!-- Metadata-section -->
+      {{- partial "metadata" . -}}
+    
+    </div>
+
+    <!-- Article content wrapper -->
+    <div class="article-content">
+
+      <!-- If there is an image attached to this article -->
+      {{ if .Params.mainImage }}
+
+        <!-- Picture -->
+        <figure>
+
+          <a href="{{ .Params.mainImage | relURL }}">
+            <img
+              src="{{ .Params.mainImageThumbnail | relURL }}"
+              alt="{{ .Params.mainImageCaption | markdownify }}"
+            />
+          </a>
+
+          <!-- Picture caption -->
+          <figcaption>
+            {{ .Params.mainImageCaption | markdownify }}
+          </figcaption>
+
+        </figure>
+      {{ end }}
+
+      <!-- Content of the associated markdown-file -->
+      {{ .Content }}
+
+    </div>
+
+    {{ partial "prevNext" . }}
+
+  </article>
+
+  {{ partial "metadataJS" . }}
+  
 {{ end }}

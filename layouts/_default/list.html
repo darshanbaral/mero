@@ -1,62 +1,62 @@
 {{ define "main" }}
-<main>
-  <!-- Page title -->
-  <h1 class="page-title">{{ .Title }}</h1>
+  <main>
+    <!-- Page title -->
+    <h1 class="page-title">{{ .Title }}</h1>
 
-  <!-- List wrapper -->
-  <div class="list-wrapper">
-    {{ range (.Paginator 10).Pages }}
-    
-    <!-- List element -->
-    <div
-      class="list-item"
-    >
-    <!-- Wrapper for date & metadata-button -->
-      <div class="date-wrapper">
-        
-        <!-- Date -->
-        <small>
-          <time>
-            {{- .Date.Format (default "2006-12-13" $.Site.Params.dateFormat) -}}
-          </time>
-        </small>
-
-        <!-- Metadata-button -->
-        <span
-          class="metadata-btn"
-          title="Show Metadata"
-          onclick="showMetadata(this)"
-          onkeypress="keyPress(this, event)"
-          tabindex="0"
-        >
-          &#43;
-        </span>
-      </div>
-
-      <!-- Metadata-section-->
-      {{ partial "metadata" . }}
-
-      <!-- Blog article title -->
-      <h3 class="item-title">
-        <a href="{{ .Permalink | relURL }}" class="item-title-link">
-          {{- .Title -}}
-        </a>
-      </h3>
+    <!-- List wrapper -->
+    <div class="list-wrapper">
+      {{ range (.Paginator 10).Pages }}
       
-      <!-- Blog article description -->
-      {{ if .Params.Description }}
-      <p class="item-desc">{{ .Params.Description }}</p>
+      <!-- List element -->
+      <div class="list-item">
+
+        <div class="date-wrapper">
+          
+          <!-- Date-stamp -->
+          <small>
+            <time>
+              {{- .Date.Format (default "2006-12-13" $.Site.Params.dateFormat) -}}
+            </time>
+          </small>
+
+          <!-- Metadata-button -->
+          <span
+            class="metadata-btn"
+            title="Show Metadata"
+            onclick="showMetadata(this)"
+            onkeypress="keyPress(this, event)"
+            tabindex="0"
+          >
+            &#43;
+          </span>
+        </div>
+
+        <!-- Metadata-section-->
+        {{ partial "metadata" . }}
+
+        <!-- Blog article title -->
+        <h3 class="item-title">
+          <a href="{{ .Permalink | relURL }}" class="item-title-link">
+            {{- .Title -}}
+          </a>
+        </h3>
+        
+        <!-- Blog article description -->
+        {{ if .Params.Description }}
+        <p class="item-desc">{{ .Params.Description }}</p>
+        {{ end }}
+      </div>
       {{ end }}
+
+
     </div>
-    {{ end }}
 
+    <!-- Pagination -->
+    <div class="pagination">
+      {{ template "_internal/pagination.html" . }}
+    </div>
+  </main>
 
-  </div>
+  {{ partial "metadataJS" . }}
 
-  <!-- Pagination -->
-  <div class="pagination">
-    {{ template "_internal/pagination.html" . }}
-  </div>
-</main>
-{{ partial "metadataJS" . }}
 {{ end }}

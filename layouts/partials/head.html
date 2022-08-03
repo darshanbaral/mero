@@ -9,7 +9,7 @@
 
   <meta property="og:title" content="{{ if .IsHome }}Hjem - {{ else }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}"/>
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ .Site.BaseURL }}" />
+  <meta property="og:url" content="{{ .Page.Permalink }}" />
   <meta property="og:locale" content="nb_no" />
 
   <meta property="og:image" content="/cengelsenOG.jpg" />

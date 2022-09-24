@@ -1,8 +1,16 @@
-<h4 class="about">
-  <b>Om</b>
-</h4>
+<div class="about-content">
+  
+  <!-- Section title -->
+  <h4 class="about-title">
+    <b>Om</b>
+  </h4>
 
-<h1>{{ .Site.Params.author }}.</h1>
-<p>
-  {{- .Site.Params.introduction.text | markdownify -}}
-</p>
+  <!-- Site author -->
+  <h1 class="site-author">{{ .Site.Params.author }}.</h1>
+  
+  <!-- description of author -->
+  <p class="author-description">
+    {{- .Site.Params.introduction.text | markdownify -}}
+  </p>
+
+</div>

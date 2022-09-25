@@ -1,37 +1,49 @@
-<div class="m-2 metadata overflow-hidden" style="max-height: 0px;">
+<div class="metadata-section" style="max-height: 0px;">
   {{ if ne $.Kind "section" }}
-  <div class="metadata-value mb-1 taxa taxa-container-div list-sections">
-    <div>
-      Reading Time: {{ partial "readingtime" . }}      
+
+    <!-- Reading-time value -->
+    <div class="metadata-item">
+      <div>
+        Reading Time: {{ partial "readingtime" . }}      
+      </div>
     </div>
-    <div>
+
+    <!-- Section value -->
+    <div class="metadata-item">
       Section:
       <a
-        class="pl-1 pr-1 rounded border border-secondary"
+        class="metadata-value"
         href="{{ .Section | relURL }}"
         title="Section"
       >
         {{- (.Site.GetPage .Section).Title -}}
       </a>
     </div>
-  </div>
+    
   {{ end }}
 
+  <!-- Fetches sitewide parameters -->
   {{ $params := .Params }}
+
+  <!-- loops through site taxonomies -->
   {{ range $name, $value := .Site.Taxonomies }}
-  {{ if index $params $name }}
-  <div class="metadata-value mb-1 taxa taxa-container-div list-{{- $name -}}">
-    {{ $name | humanize }}:
-    {{ range index $params $name }}
-    <a
-      class="pl-1 pr-1 rounded border border-secondary"
-      href="{{ $name | relURL }}/{{ . | urlize }}"
-      title="{{ $name }}"
-    >    
-      {{- . -}}
-    </a>
+    {{ if index $params $name }}
+
+      <!-- Categories & tags value -->
+      <div class="metadata-item list-{{- $name -}}">
+        {{ $name | humanize }}:
+        {{ range index $params $name }}
+        
+          <!-- value of each taxonomy item -->
+          <a
+            class="metadata-value"
+            href="{{ $name | relURL }}/{{ . | urlize }}"
+            title="{{ $name }}"
+          >
+            {{- . -}}
+          </a>
+        {{ end }}
+      </div>
     {{ end }}
-  </div>
-  {{ end }}
   {{ end }}
 </div>

@@ -1,10 +1,16 @@
-<h4
-  class="pl-2 pr-2 bg-dark rounded border"
-  style="position: absolute; top: -1rem; right: 0.5em;"
->
-  <b>About</b>
-</h4>
-<h1>I am {{ .Site.Params.author }}.</h1>
-<p>
-  {{- .Site.Params.introduction.text | markdownify -}}
-</p>
+<div class="about-content">
+  
+  <!-- Section title -->
+  <h4 class="about-title">
+    <b>Om</b>
+  </h4>
+
+  <!-- Site author -->
+  <h1 class="site-author">{{ .Site.Params.author }}.</h1>
+  
+  <!-- description of author -->
+  <p class="author-description">
+    {{- .Site.Params.introduction.text | markdownify -}}
+  </p>
+
+</div>

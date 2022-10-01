@@ -5,7 +5,7 @@
 <div class="recent-list">
 
   <!-- creates a list of the first 4 articles -->
-  {{ range first 4 (where .Site.Pages "Kind" "page").ByDate.Reverse }}
+  {{ range first 5 (where .Site.Pages "Kind" "page").ByDate.Reverse }}
     <a class="article-title" href="{{ .Permalink }}">
       {{ .Title }}
     </a>

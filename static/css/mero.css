@@ -68,6 +68,7 @@ code {
 }
 
 .navbtn-section{
+  margin-left: .4rem !important;
   -ms-flex-direction: row !important;
   flex-direction: row !important;
   display: -ms-flexbox !important;
@@ -86,6 +87,14 @@ code {
   border-left-color: rgb(222, 226, 230);
   box-shadow: 0 11px 15px rgb(0 0 0 / 0.3);
 
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover{
+  transform: scale(1.1);
 }
 
 /* Footer */
@@ -175,6 +184,7 @@ footer {
   border: 1px solid #dee2e6 !important;
 }
  */
+
 .site-author{
   margin:0px;
 }
@@ -245,7 +255,7 @@ footer {
   margin-bottom: .5rem;
   width: 100%;
   background-color: transparent;
-  
+
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -372,6 +382,15 @@ footer {
   border-radius: .25rem !important;
   border: 1px solid #dee2e6 !important;
   box-shadow: 0 11px 15px rgb(0 0 0 / 0.3);
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.list-item:hover{
+  transform: scale(1.02);
 }
 
 .date-wrapper{
@@ -465,10 +484,19 @@ footer {
   user-select: none;
   line-height: 1.5;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,
+/*   transition: color .15s ease-in-out,
               background-color .15s ease-in-out,
               border-color .15s ease-in-out,
-              box-shadow .15s ease-in-out;
+              box-shadow .15s ease-in-out; */
+  
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.taxa-box-content:hover{
+  transform: scale(1.1);
 }
 
 /* Archive page */

@@ -4,16 +4,31 @@
 
 <div class="recent-list">
 
-  <!-- creates a list of the first 4 articles -->
+  <!-- creates a list of the first 5 articles -->
   {{ range first 5 (where .Site.Pages "Kind" "page").ByDate.Reverse }}
-    <a class="article-title" href="{{ .Permalink }}">
-      {{ .Title }}
+
+    <!-- Article list item -->
+    <a class="article-link" href="{{ .Permalink }}">
+      <button class="article-btn">
+
+        <h4 class="article-title">
+          {{ .Title }}
+        </h4>
+        
+        <p class="article-desc">
+          {{ .Description }}
+        </p>
+
+      </button>
     </a>
-    <p class="article-desc">{{ .Description }}</p>
+
   {{ end }}
 
   <!-- All articles button -->
-  <p class="all-articles">
-    <a href="{{ `/archive/` | relURL }}">Se alle</a>
-  </p>
+  
+    <a href="{{ `/archive/` | relURL }}">
+      <button class="all-art-btn">Se alle</button>
+    </a>
+
+
 </div>

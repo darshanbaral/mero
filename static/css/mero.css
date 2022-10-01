@@ -20,7 +20,8 @@ body{
 
 @media only screen and (max-width: 692px){
 
-  .content-section{
+  .content-section,
+  .profile-section{
     width: 95% !important;
   }
 
@@ -32,8 +33,6 @@ body{
 
 .page-wrapper {
   min-height: 100%;
-  margin-bottom: -100px;
-  padding-bottom: 100px;
   display: block;
 }
 
@@ -45,6 +44,7 @@ h4 {font-size: 1.2rem;}
 
 /* General text properties */
 p{font-size: 1.2rem;}
+
 a {
   color: #ffc107 !important;
   text-decoration: none;
@@ -212,6 +212,7 @@ footer {
   border-radius: .25rem !important;
   border: 1px solid #dee2e6 !important;
   box-shadow: 0 15px 15px rgb(0 0 0 / 0.5);
+  margin-bottom: 1rem;
 }
 
 .recent-title{
@@ -232,26 +233,77 @@ footer {
   margin-top:1rem;
 }
 
-.article-title{
-  text-transform: uppercase !important;
-  margin-left: .25rem !important;
-  color: #ffc107 !important;
-  text-decoration: none;
+.article-link{
+  margin: 0;
+  padding: 0;
+}
+
+.article-btn{
+  text-align: left;
+  border-radius: .25rem !important;
+  border: 1px solid #dee2e6 !important;
+  margin-bottom: .5rem;
+  width: 100%;
   background-color: transparent;
+  
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.article-btn:hover{
+  cursor: pointer;
+  width: 95%;
+}
+
+.article-title{
+  color: #ffc107 !important;
+  text-transform: uppercase !important;
+  text-decoration: underline;
+
+  padding: .5rem;
+  margin: 0px;
 }
 
 .article-desc{
-  margin-left: .5rem !important;
-  margin-bottom: 1rem !important;
+
+  color: #fff;
   font-size: 1.2rem;
-  margin-top: 0;
+  margin: 0px;
+  text-decoration: none;
+  padding: .5rem;
+
 }
 
-.all-articles{
-  text-align: right !important;
+.all-art-link{
+  text-align: center !important;
   margin: 0px;
-  margin-top: 1rem;
   font-size: 1.2rem;
+  width: 100%;
+}
+
+.all-art-btn{
+  text-align: center !important;
+  margin: 0px;
+  font-size: 1.2rem;
+  width: 100%;
+  color: #ffc107 !important;
+  border-radius: .25rem !important;
+  border: 1px solid #dee2e6 !important;
+  margin-bottom: .5rem;
+  width: 100%;
+  background-color: transparent;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.all-art-btn:hover{
+  cursor: pointer;
+  width: 95%;
 }
 
 /* Metadata section */

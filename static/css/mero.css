@@ -84,6 +84,8 @@ code {
   border-right-color: rgb(222, 226, 230);
   border-bottom-color: rgb(222, 226, 230);
   border-left-color: rgb(222, 226, 230);
+  box-shadow: 0 11px 15px rgb(0 0 0 / 0.3);
+
 }
 
 /* Footer */
@@ -127,7 +129,7 @@ footer {
   display: flex !important;
 }
 
-.picture-section{
+.profile-section{
   width: calc(35% - 20px);
   min-width: 250px;
   margin-top: 1.5rem !important;
@@ -138,15 +140,43 @@ footer {
   margin-top: 1.5rem !important;
 }
 
+/* Profile section */
 /* Image */
 .profile-image{
-  margin-bottom: .5rem !important;
+  margin-bottom: 1.5rem !important;
   width: 100% !important;
   border-radius: .25rem !important;
   max-width: 100%;
   height: auto;
   vertical-align: middle;
   border-style: none;
+  box-shadow: 0 15px 15px rgb(0 0 0 / 0.5);
+}
+
+/* About section */
+.about-section{
+  margin-bottom: 40px;
+  padding: .5rem !important;
+  position: relative !important;
+  border-radius: .25rem !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 15px 15px rgb(0 0 0 / 0.5);
+}
+
+/* .about-title{
+  position: absolute; 
+  top: -0.8rem; 
+  right: 0.5em;
+  background-color: rgb(37, 36, 36) !important;
+  padding-left: .5rem !important;
+  padding-right: .5rem !important;
+  margin: 0px;
+  border-radius: .25rem !important;
+  border: 1px solid #dee2e6 !important;
+}
+ */
+.site-author{
+  margin:0px;
 }
 
 /* Social links */
@@ -166,37 +196,14 @@ footer {
 
 .social-icon {
   font-size: 1.7em;
+  box-shadow: 0 15px 15px rgb(0 0 0 / 0.3);
 }
 
 .social-icon:hover {
   font-size: 1.6em;
 }
 
-/* About section */
-.about-section{
-  margin-bottom: 40px;
-  padding: .5rem !important;
-  position: relative !important;
-  border-radius: .25rem !important;
-  border: 1px solid #dee2e6 !important;
-}
-
-.about-title{
-  position: absolute; 
-  top: -0.8rem; 
-  right: 0.5em;
-  background-color: rgb(37, 36, 36) !important;
-  padding-left: .5rem !important;
-  padding-right: .5rem !important;
-  margin: 0px;
-  border-radius: .25rem !important;
-  border: 1px solid #dee2e6 !important;
-}
-
-.site-author{
-  margin:0px;
-}
-
+/* Content section */
 /* Recent articles */
 .recent-section{
   text-align: center !important;
@@ -204,6 +211,7 @@ footer {
   position: relative !important;
   border-radius: .25rem !important;
   border: 1px solid #dee2e6 !important;
+  box-shadow: 0 15px 15px rgb(0 0 0 / 0.5);
 }
 
 .recent-title{
@@ -311,7 +319,7 @@ footer {
   position: relative !important;
   border-radius: .25rem !important;
   border: 1px solid #dee2e6 !important;
-
+  box-shadow: 0 11px 15px rgb(0 0 0 / 0.3);
 }
 
 .date-wrapper{

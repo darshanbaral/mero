@@ -11,12 +11,13 @@
   
   {{ range .Site.Params.social.list }}
 
-  <!-- Social button -->
-  <div class="social-btn">
-    <a href="{{ .url }}" target="_blank">
-      <i class="social-icon {{ .class }} {{ .icon }}"></i>
-    </a>
-  </div>
+    <!-- Social button -->
+    <div class="social-btn">
+      <a href="{{ .url }}" target="_blank">
+        <i class="social-icon {{ .class }} {{ .icon }}"></i>
+      </a>
+    </div>
+
   {{ end }}
 </div>
  

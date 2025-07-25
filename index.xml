@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Blog</title>
+    <link>https://darshanbaral.github.io/mero/</link>
+    <description>Recent content on My Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 May 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://darshanbaral.github.io/mero/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create new hugo theme</title>
+      <link>https://darshanbaral.github.io/mero/post/post-1/</link>
+      <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://darshanbaral.github.io/mero/post/post-1/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;hugo new theme&lt;/code&gt; command will scaffold the beginnings of a new theme for you to get you on your way.&lt;/p&gt;&#xA;&lt;p&gt;If you’re creating a theme with plans to share it on the Hugo Themes website please note the following: - If using inline styles you will need to use absolute URLs, for the linked assets to be served properly, e.g. &lt;code&gt;&amp;lt;div style=&amp;quot;background: url(&#39;{{ &amp;quot;images/background.jpg&amp;quot; | absURL }}&#39;)&amp;quot;&amp;gt;&lt;/code&gt; - Make sure not to use a forward slash &lt;code&gt;/&lt;/code&gt; in the beginning of a &lt;code&gt;URL&lt;/code&gt;, because it will point to the host root. Your theme’s demo will be available in a subdirectory of the Hugo website and in this scenario Hugo will not generate the correct &lt;code&gt;URL&lt;/code&gt; for theme assets. - If using external CSS and JS from a CDN, make sure to load these assets over &lt;code&gt;https&lt;/code&gt;. Please do not use relative protocol URLs in your theme’s templates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Title of the blog 1</title>
+      <link>https://darshanbaral.github.io/mero/blogs/blog-1/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://darshanbaral.github.io/mero/blogs/blog-1/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Title of the post 3</title>
+      <link>https://darshanbaral.github.io/mero/post/post-3/</link>
+      <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>https://darshanbaral.github.io/mero/post/post-3/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Title of the blog 2</title>
+      <link>https://darshanbaral.github.io/mero/blogs/blog-2/</link>
+      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>https://darshanbaral.github.io/mero/blogs/blog-2/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Title of the post 2</title>
+      <link>https://darshanbaral.github.io/mero/post/post-2/</link>
+      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>https://darshanbaral.github.io/mero/post/post-2/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Title of the post 4</title>
+      <link>https://darshanbaral.github.io/mero/post/post-4/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://darshanbaral.github.io/mero/post/post-4/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

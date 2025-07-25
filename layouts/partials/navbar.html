@@ -4,7 +4,7 @@
       class="menu-item border border-warning bg-dark p-2"
       style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;"
     >
-      <a href="{{ `/` | relURL }}"><span>Home</span> </a>
+      <a href="{{ .Site.BaseURL }}"><span>Home</span> </a>
     </div>
     <div class="menu-item dropdown border border-warning bg-dark p-2">
       <span class="dropbtn text-warning" onclick="toggleMenu(this)"
@@ -19,7 +19,7 @@
           {{ $thisSection := replace (replace .File.Dir "\\" "") "/" "" }}
           {{ if not (in (slice "alltaxa" "archive") $thisSection) }}
           <li class="pt-2">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <a href="{{ .Permalink | relURL }}">{{ .Title }}</a>
           </li>
           {{ end }}
           {{ end }}
